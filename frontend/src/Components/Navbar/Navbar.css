@@ -1,0 +1,84 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 35px;
+  }
+  
+  .nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-logo p{
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+
+}
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  
+  .nav-links a:hover {
+    color: #4caf50;
+  }
+
+  .nav-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .login-btn {
+    padding: 9px 16px;
+    background-color: white;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+  }
+  
+  .signup-btn {
+    padding:9px 15px;
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .logout-btn {
+    padding: 10px 15px;
+    background-color: white;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+
+  }
+  
+  .nav-button:hover {
+    background-color: #3e8e41;
+    color: white;
+  }
+  
+  .login-btn:hover {
+    background-color: #4caf50;
+    color: white;
+  }
