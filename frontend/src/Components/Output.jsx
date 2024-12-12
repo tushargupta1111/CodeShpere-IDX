@@ -46,7 +46,7 @@ const Output = ({editorRef, language}) => {
             </Button>
         </Box>
 
-        <Box height='80vh' p={2} color={isError ? "red.400" : ""} border='1px solid' borderRadius={4} borderColor='#333'>
+        <Box height='80vh' p={2} color={isError ? "red.400" : ""} border='1px solid' borderRadius={4} borderColor='#333' fontSize={20}>
             {output ? output.map((line,i) => <Text key={i}>{line}</Text>): 'Click "Run Code" to see the output here'}
         </Box>
     </Box>

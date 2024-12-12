@@ -23,15 +23,16 @@ const CodeEditor = () => {
   return (
     <Box>
       <HStack spacing={4}>
-        <Box w="50%">
+        <Box w="70%">
           <LanguageSelector language={language} onSelect={onSelect} />
           <Editor
             options={{
               minimap: {
                 enabled: false,
               },
+              fontSize : 20,
             }}
-            fontsize="50px"
+            
             height="80vh"
             theme="vs-dark"
             language={language}
