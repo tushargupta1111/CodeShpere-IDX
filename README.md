@@ -38,18 +38,18 @@ CodeSphere is an online code editor and compiler that emulates a Visual Studio C
 1. Clone the repository:
    ```bash
    git clone https://github.com/tushargupta1111/CodeSphere-IDX.git
-   cd CodeSphere
+   cd CodeSphere-IDX
    ```
 2. Install dependencies:
    ```bash
    npm install
-   cd client
+   cd frontend
    npm install
    cd ..
    ```
 3. Start the development server:
    ```bash
-   npm run dev
+   npm start
    ```
 4. Open the application in your browser at `http://localhost:3000`.
 
