@@ -1,4 +1,4 @@
-# CodeSphere: Online Code Editor
+# CodeSphere: Online Code Editor + Collaboration Platform
 
 ## Overview
 CodeSphere is an online code editor and compiler that emulates a Visual Studio Code environment. Designed with a focus on collaboration and versatility, it provides developers, programmers, and students with a cloud-based platform for writing, compiling, and executing code.
