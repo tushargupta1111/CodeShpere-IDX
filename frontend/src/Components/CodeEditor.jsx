@@ -31,6 +31,16 @@ const CodeEditor = () => {
                 enabled: false,
               },
               fontSize : 20,
+              quickSuggestions: true,
+              wordBasedSuggestions: true,
+              suggestOnTriggerCharacters: true,
+              tabSize: 4,
+              wordWrap: "on",
+              parameterHints: { enabled: true },
+              contextmenu: false,
+              formatOnType: true,
+              formatOnPaste: true,
+              snippets: true,
             }}
             
             height="80vh"

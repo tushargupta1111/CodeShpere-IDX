@@ -11,7 +11,7 @@ const Home = () => {
         <header className="header">
         <h1>Welcome to CodeSphere</h1>
         <p>Enable real-time code sharing and collaboration in multiple languages.</p>
-        <button className="cta-button">Get Started</button>
+        <button className="cta-button" onClick={() => window.location.href = '/Editor'}>Get Started</button>
       </header>
 
       {/* Features Section */}
