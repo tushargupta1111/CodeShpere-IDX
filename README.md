@@ -76,7 +76,7 @@ npm install
 
 ```bash
 cd ../backend
-npm run dev
+node index.js
 ```
 
 2. Start the frontend development server:
