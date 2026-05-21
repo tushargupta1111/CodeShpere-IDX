@@ -1,92 +1,138 @@
-# CodeSphere: Online Code Editor + Collaboration Platform
+# CodeSphere
 
-## Overview
-CodeSphere is an online code editor and compiler that emulates a Visual Studio Code environment. Designed with a focus on collaboration and versatility, it provides developers, programmers, and students with a cloud-based platform for writing, compiling, and executing code.
+## What is CodeSphere?
 
-## Features
-- **Real-time Collaboration**: Share code and work with peers simultaneously.
-- **Multi-language Support**: Supports C/C++, Python, Java, and JavaScript.
-- **Code Editing Tools**: Includes syntax highlighting, code completion, and debugging tools.
-- **Compilation and Execution**: Real-time code compilation and execution.
-- **Interactive Terminal**: Allows program input and output within the browser.
-- **Customizable Interface**: Offers user-defined themes, keyboard shortcuts, and workspace layouts.
-- **Authentication and Authorization**: Secure user login and role-based access control.
+CodeSphere is a web-based code editor and collaboration platform built with React, Vite, and Socket.IO. It enables developers to edit code together in real time while running code directly inside the browser or via remote execution services.
 
-## Technologies Used
+## Key Features
 
-### Frontend:
-- **Languages**: HTML5, CSS3, JavaScript
-- **Framework**: React
+- Real-time collaborative editing with Socket.IO
+- Multi-language editor with live language switching
+- Built-in execution support for:
+  - JavaScript (sandboxed iframe)
+  - Python (Pyodide in browser)
+  - Java, C, C++, PHP (Judge0 public API)
+- Room-based collaboration with join/leave notifications
+- Live client list and shared room state
+- Responsive React UI with Tailwind CSS styling
 
-### Backend:
-- **Technologies**: Node.js, Express.js
-- **Templating**: EJS for server-side rendering
+## Architecture
 
-### Database:
-- **Technology**: MongoDB for scalable data storage
+### Frontend
+- React + Vite
+- Tailwind CSS styling
+- Socket.IO client for real-time collaboration
+- In-browser execution for JavaScript and Python
+- Remote execution via Judge0 for compiled languages
 
-### APIs:
-- RESTful APIs for communication between the frontend and backend
+### Backend
+- Node.js + Express
+- Socket.IO server for room lifecycle and event broadcasting
+- Stores room state in memory for late join synchronization
+- Static file hosting support for production builds
 
-## Installation
+## Supported Languages
 
-### Prerequisites:
-- [Node.js](https://nodejs.org/) installed
-- [MongoDB](https://www.mongodb.com/) installed and running
+- `javascript`
+- `python`
+- `java`
+- `c`
+- `cpp`
+- `php`
 
-### Steps:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/tushargupta1111/CodeSphere-IDX.git
-   cd CodeSphere-IDX
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   cd frontend
-   npm install
-   cd ..
-   ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-4. Open the application in your browser at `http://localhost:3000`.
+## Getting Started
 
-## Usage
-- **Create an Account**: Sign up to save your code and collaborate with others.
-- **Write Code**: Use the editor to write and debug code with syntax highlighting and autocompletion.
-- **Compile and Execute**: Run your code and view results in the integrated terminal.
-- **Collaborate**: Share your workspace link with others for real-time collaboration.
+### Prerequisites
 
-## Progress So Far
-- Developed the frontend with React.
-- Implemented backend functionalities for compilation and execution.
-- Set up MongoDB for user authentication and code storage.
+- Node.js installed
+- npm available
 
-## Future Enhancements
-- **Real-Time Screen Sharing**: Allow users to share their screens for better collaboration.
-- **Advanced Debugging Tools**: Integrate advanced debugging features.
-- **Optimized Performance**: Improve scalability and response time.
+### Install dependencies
+
+From the repository root:
+
+```bash
+git clone https://github.com/tushargupta1111/CodeSphere-IDX.git
+cd CodeSphere-IDX
+```
+
+Install backend dependencies:
+
+```bash
+cd backend
+npm install
+```
+
+Install frontend dependencies:
+
+```bash
+cd ../frontend
+npm install
+```
+
+### Run locally
+
+1. Start the backend server:
+
+```bash
+cd ../backend
+npm run dev
+```
+
+2. Start the frontend development server:
+
+```bash
+cd ../frontend
+npm run dev
+```
+
+3. Open the frontend in your browser at `http://localhost:5173`
+
+## Environment Configuration
+
+The frontend uses `VITE_SERVER_URL` to connect to the Socket.IO backend. By default it points to `http://localhost:4000`.
+
+If you need to configure a custom backend URL, add a `.env` file in `frontend/` with:
+
+```env
+VITE_SERVER_URL=http://localhost:4000
+```
+
+## How Collaboration Works
+
+- A user creates or joins a room by entering a room ID and username.
+- Socket.IO synchronizes code and language selection for all connected clients.
+- When a new user joins, the current room code and language are sent to them automatically.
+- Users can copy the room ID to invite others.
+
+## Execution Engine
+
+CodeSphere runs code using a hybrid execution model:
+
+- JavaScript: sandboxed iframe
+- Python: browser-based Pyodide runtime
+- Java/C/C++/PHP: Judge0 public API
+
+> Note: Judge0 may require a free RapidAPI key for reliable usage.
+
+## Project Structure
+
+- `backend/` — Express + Socket.IO backend
+- `frontend/` — React + Vite frontend
+- `frontend/src/Services/useSocket.js` — real-time socket manager
+- `frontend/src/Services/Executor.js` — code execution logic
+- `frontend/src/Pages/EditorRoom.jsx` — collaboration editor UI
 
 ## Contributing
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit changes:
-   ```bash
-   git commit -m "Add your message"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a pull request.
+
+Contributions are welcome! Suggested workflow:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Commit your work: `git commit -m "Add feature description"`
+4. Push to your fork: `git push origin feature/your-feature`
+5. Open a pull request
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-## Contact
-For any queries, reach out to [Tushar Gupta](mailto:tusharkumargupta1111@gmail.com).
+This project is licensed under the MIT License.
