@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { CODE_SNIPPETS, LANG_VERSIONS, LANG_ICONS } from "../constants";
-import { executeCode, getEngine } from "../Services/executor";
+import { executeCode, getEngine } from "../Services/Executor";
 import useSocket from "../Services/useSocket";
 
 // ─── Toast (same instance as CollaborationPage) ───────────────────────────────
