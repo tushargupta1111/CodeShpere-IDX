@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CODE_SNIPPETS, LANG_VERSIONS, LANG_ICONS } from "../constants";
-import { executeCode } from "../services/Executor";
+import { executeCode } from "../Services/Executor";
 
 export default function CompilerPage({}) {
   const [language, setLanguage] = useState("python");
